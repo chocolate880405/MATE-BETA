@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+</head>
+<style>
+    html{
+        overflow-y: overlay;
+    }
+    #out{
+        overflow-x:hidden; 
+        transform: 1s;
+    }
+    ul{
+        overflow:auto;
+        padding: 0;
+        width: 500vw;
+        height: 500vh;
+        background-color: rgb(120, 120, 202);
+    }
+    li{
+        
+        width: 100vw;
+        height: 100%;
+    }
+    .section1{
+        width: 100%;
+        height: 100vh;
+        background-color: darkgoldenrod;
+    }
+</style>
+<body>
+    <div class="section1"></div>
+    <div id="out" >
+        <ul class="d-flex" id="inside">
+            <li style="background-color: pink;"></li>
+            <li style="background-color: rgb(137, 175, 204);"></li>
+            <li style="background-color: rgb(17, 0, 255);"></li>
+            <li style="background-color: rgb(186, 184, 221);"> </li>
+            <li style="background-color: rgb(58, 151, 117);"></li>
+        </ul>
+    </div>
+    <div class="section1"></div>
+    
+</body>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script> 
+    var outDiv = document.getElementById('out'); 
+        outDiv.onwheel = function(event){ 
+                 //禁止事件預設行為(此處禁止滑鼠滾輪行為關聯到"螢幕滾動條上下移動"行為)
+                event.preventDefault(); 
+                //設定滑鼠滾輪滾動時螢幕滾動條的移動步長
+                var step =  $(window).width(); 
+                var xstep = $('#out').scrollLeft();
+                    if(event.deltaY < 0 ){ 
+                        //向上滾動滑鼠滾輪,螢幕滾動條左移 
+                        this.scrollLeft -= step; 
+                        console.log(xstep); 
+                    }else
+                        //向下滾動滑鼠滾輪,螢幕滾動條右移 
+                        this.scrollLeft += step; 
+                        console.log(xstep);     
+                    } 
+
+    </script>
+
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 套用boostrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <!-- 套用fontawesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- googlefont字體 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&family=Noto+Sans:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./ON_FIRE.css">
+    <link rel="stylesheet" href="./Lightbox.css">
+    <title>lightbox</title>
+
+</head>
+
+<body>
+    <!-- 背景遮罩 -->
+    <div class="gg-blur"></div>
+    <!-- 自己加id名稱嘿 -->
+    <div class="btn-pc-big-orange" id="btnnnnn-1">我是按鈕</div>
+    <div class="btn-pc-big-orange" id="bnttttt-1">拉基按鈕</div>
+    <!-- 複製LB-lightbox整個div ，id 內容自己修改 -->
+    <!-- 不同條件下出現不同的Lightbox得寫別的判定-->
+    <div class="LB-lightbox " id="btnnnnn">
+        <div class="LB-lightbox1">
+            <div class="LB-close_btn"></div>
+            <div class="LB-section d-flex justify-content-between flex-column">
+                <div class="LB-title d-flex pc-title-32 justify-content-center LB-ttitle" >
+                    <div class="LB-left text-linear-orange mr-2">&lt;</div>
+                    <p class="text-pink">哈囉你好</p>
+                    <div class="LB-right text-linear-orange ml-2">&gt;</div>  
+                </div>
+                <div class="LB-content align-items-center d-flex flex-column pc-small-title-16 LB-text">
+                    <p class="text-pink ">自己改字嘿</p>
+                    <p class="text-pink ">jq自己設好捏，id啥的霹哩啪啦，拉拉拉拉</p>
+                </div>
+                <div class="d-flex justify-content-center">
+                    <div class="btn-pc-orange LB-btn">前往填寫</div> 
+                </div> 
+            </div>
+        </div>
+    </div>
+    <div class="LB-lightbox" id="bnttttt">
+        <div class="LB-lightbox1">
+            <div class="LB-close_btn"></div>
+            <div class="LB-section d-flex justify-content-between flex-column">
+                <div class="LB-title d-flex pc-title-32 justify-content-center LB-ttitle" >
+                    <div class="LB-left text-linear-orange mr-2">&lt;</div>
+                    <p class="text-pink">第二個框</p>
+                    <div class="LB-right text-linear-orange ml-2">&gt;</div>  
+                </div>
+                <div class="LB-content align-items-center d-flex flex-column pc-small-title-16 LB-text">
+                    <p class="text-pink ">我的媽媽咪呀</p>
+                    <p class="text-pink ">好煩喔開開關關消不掉</p>
+                </div>
+                <div class="d-flex justify-content-center">
+                    <div class="btn-pc-orange LB-btn">我去睡覺</div> 
+                </div> 
+            </div>
+        </div>
+    </div>
+</body>
+    <!-- 記得php的script要放，下面這串自己忽略 -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+    integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+    crossorigin="anonymous"></script>
+
+    <!-- 自己改個id名稱嘿，以下複製-->
+<script>
+    // 偵測是否有打開lightbox，本來想寫通用function帶進去，好像想不到，kate桑救命
+    function closelightbox(){
+            console.log(this,'1');
+            if($('.LB-lightbox').hasClass('active')){
+                $('.gg-blur').css('display','none');
+                $('.LB-lightbox').removeClass('active');
+            }else{
+            $('.LB-lightbox').addClass('active');
+            $('.gg-blur').css('display','block');
+            }
+        }
+    //第一個鈕
+    $('#btnnnnn-1').click(function(){
+        console.log(this,'1');
+        if($('#btnnnnn').hasClass('active')){
+            $('.gg-blur').css('display','none');
+            $('#btnnnnn').removeClass('active');
+        }else{
+            $('#btnnnnn').addClass('active');
+            $('.gg-blur').css('display','block');
+        }
+    })
+    //第二個鈕
+    $('#bnttttt-1').click(function(){
+        console.log(this,'1');
+        if($('#bnttttt').hasClass('active')){
+            $('.gg-blur').css('display','none');
+            $('#bnttttt').removeClass('active');
+        }else{
+            $('#bnttttt').addClass('active');
+            $('.gg-blur').css('display','block');
+        }
+    })
+    // 關掉lightbox
+    $('.LB-close_btn').click(function(){
+            closelightbox();
+    })   
+</script>
+</html>

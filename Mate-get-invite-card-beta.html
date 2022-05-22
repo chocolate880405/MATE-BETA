@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=ABeeZee&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&family=Noto+Sans:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./ON_FIRE.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body {
+        min-width: 375px;
+    }
+
+    div,
+    p {
+        margin-bottom: 0px;
+    }
+    .gg-mr50{
+            margin-right:50px ;
+        }
+    .gg-blur{
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            z-index: 9;
+            background-color: rgba(36, 0, 115, 0.63);
+        }
+        .gg-card{
+            z-index: 10;
+            width: 580px;
+            height:fit-content;
+            background-image: linear-gradient(226.02deg, rgba(255, 103, 249, 1) 4.21%, rgba(83, 56, 245, 1) 99.47%),linear-gradient(45deg, #F66F40,#FFD38D);
+            border-radius: 10px;
+            border:3px solid transparent;
+            background-origin: border-box;
+            background-clip: content-box, border-box;
+            position: fixed;
+            top:50%;
+            left:50%;
+            transform: translate(-50%, -50%);
+        }
+        .gg-content{
+            position: relative;
+            margin: 40px;
+        }
+        .gg-name-image{
+            display: flex;
+            justify-content:start;
+        }
+        .gg-image{
+            width: 45%;
+            min-width: 100px;
+            height: 140px;
+            background-image: url(https://greatgame.asia/wp-content/uploads/2020/10/5312385.jpg);
+            background-size: cover;
+            background-position: center center;
+            margin-right:10px ;
+        }
+        .gg-name{
+            width: 45%;
+            min-width: 250px;
+        }
+        .gg-tag{
+            width: 100%;
+            display: none;
+        }
+        .gg-tag1{
+            display: flex;
+        }
+        .gg-mb10{
+            margin-bottom: 10px;
+        }
+        .gg-mt10{
+            margin-top: 10px;
+        }
+        .gg-mr10{
+            margin-right: 10px;
+        }
+        .btn-linear-orange{
+            background-image: linear-gradient( #D45BF8,  #D45BF8),linear-gradient(45deg, #F66F40,#FFD38D);
+        }
+        .speak{
+            width: 100%;
+            background: rgba(255, 255, 255, 0.3);
+            min-height: 140px;
+            border-radius: 10px;
+            color:#F4EDED;
+            padding: 10px;
+        }
+        .gg-icon{
+            position: absolute;
+            width: 42px;
+            height: 42px;
+            border-radius: 25px;
+            overflow: hidden;
+            top:-60px;
+            right:-61px;
+        }
+        .gg-w{
+            background: rgba(255, 255, 255, 0.3);
+        }
+        .fa-circle-xmark{
+            font-size: 42px;
+            color: #FFD38D;
+            background-color: #062767;
+        }
+        .gg-mauto{
+            margin:auto;
+        }
+        @media screen and (max-width:960px) {
+            .left-nav {
+            display: none;
+        }
+        .title{
+            margin-top: 35px;
+        }    
+        .content{
+            width: 90%;
+            min-width: 335px;
+            margin-top: 0px;
+        }
+        .gg-card{
+            width: 335px;
+        }
+        .gg-mtitle{
+            font-size: 20px;
+            line-height: 21px;
+            font-weight: 700;
+            letter-spacing: 2.5px;
+        }
+            .gg-send{
+            font-size: 28px;
+            line-height: 36px;
+            font-weight: 700;
+            letter-spacing: 2.5px;
+            }
+        .gg-option{
+            font-size: 12px;
+            line-height: 15px;
+            font-weight: 700;
+            letter-spacing: 2.5px;
+        }
+            
+        .gg-name{
+            width: 250px;
+        }
+        .gg-content{
+            margin:30px;
+        }
+        .gg-image{
+            width: 80px;
+            height: 80px;
+            }
+            .gg-tag{
+                display: flex;
+                margin-top: 10px;
+            }
+            .gg-tag1{
+                display: none;
+            }
+            .gg-card-title{
+                font-size: 20px;
+                line-height: 21px;
+                font-weight: 700;
+                letter-spacing: 2.5px;
+            }
+            .gg-smallt{
+                font-weight: 400;
+                font-size: 12px;
+                line-height: 22px;
+                letter-spacing: 2.5px;
+            }
+            .gg-text{
+                font-size: 14px;
+                line-height: 25px;
+                font-weight: 700;
+                letter-spacing: 2.5px;
+            }
+            .gg-pstitle{
+            font-size: 16px;
+            line-height: 30px;
+            letter-spacing: 2.5px;
+            font-weight: 700;
+        }
+        .gg-icon{
+            top:-50px;
+            right:-55px;
+        }
+        .gg-mr50{
+            margin-right: 10px;
+        }
+        .gg-btnw{
+            width: max-content;
+            padding: 7px 20px;
+            border-radius: 8px;
+            height: 30px;
+            color:#F4EDED;
+            background: rgba(255, 255, 255, 0.3);
+            font-size: 16px;
+            line-height: 16px;
+            font-weight: 700;
+            letter-spacing: 2.5px;
+        }
+        }
+    </style> 
+</head>
+<body>
+    <div class="gg-blur"></div>
+    <div class="gg-card">
+        <div class="gg-content">
+            <div class="gg-icon"><i class="fa-regular fa-circle-xmark"></i></div>
+            <div class="gg-name-image ">
+                <div class="gg-image"></div>
+                <div class="gg-name d-flex flex-column">
+                    <div class="gg-name-top d-flex align-items-center">
+                        <p class="pc-title-32 text-pink mr-3 gg-card-title">GURA</p>
+                        <p class="pc-tag-12 text-hint gg-option">查看個人檔案</p>
+                    </div>
+                    <div class="d-flex gg-mb10">
+                        <p class="pc-hint-14 text-pink mr-2 gg-smallt">台北市</p>
+                        <p class="pc-hint-14 text-pink gg-smallt">23歲</p>
+                    </div>
+                    <div class="btn-linear-orange gg-mb10">
+                        <p class="text-linear-orange pc-tag-12 m-tag">拳擊工程師</p>
+                    </div>
+                    <div class="gg-tag1">
+                        <div class="btn-tag mr-1">吃美食</div>
+                        <div class="btn-tag mr-1">打屁孩</div>
+                        <div class="btn-tag mr-1">吸貓</div>
+                    </div>
+                </div>
+            </div>
+            <div class="gg-tag">
+                <div class="btn-tag mr-1">吃美食</div>
+                <div class="btn-tag mr-1">棒打屁孩</div>
+                <div class="btn-tag mr-1">吸貓</div>
+            </div>
+            <div class="gg-word d-flex flex-column">
+                <p class="pc-hint-14 text-pink gg-mt10 gg-text">邀約日期</p>
+                <div class="d-flex">
+                    <p class="pc-title-32 gg-mr10 text-pink gg-send">2022/05/12</p>
+                    <p class="pc-title-32 text-pink gg-send">20:00</p>
+                </div>
+                <p class="pc-hint-14 text-pink gg-text">地點</p>
+                <p class="pc-middle-title-20 text-pink gg-pstitle">捷運大安站農會大樓3樓 </p>
+                <div class="d-flex align-items-center ">
+                    <p class="pc-hint-14 text-pink mr-1 gg-text">美食</p>
+                    <div class="btn-tag">我請客</div>
+                </div>
+                <p class="pc-middle-title-20 text-pink gg-pstitle">美墨炸雞桶餐配肥宅快樂水 </p>
+                <p class="pc-hint-14 text-pink mb-1 gg-text">留言</p>
+                <div class="speak pc-regular-text-16 gg-smallt">鯊鯊好可愛喔喔喔鯊鯊好可愛喔喔喔鯊鯊好可愛喔喔喔鯊鯊好可愛喔喔喔鯊鯊好可愛喔喔喔</div>
+            </div>
+            <div class="d-flex gg-mt10 justify-content-center">
+                <div class="btn-pc-purple gg-mr50 gg-btnw gg-w">拒絕邀請</div>
+                <div class="btn-pc-purple gg-btnw gg-w">接受邀請</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
