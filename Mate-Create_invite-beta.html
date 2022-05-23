@@ -92,7 +92,7 @@
             margin-bottom: 50px;
         }
         .gg-time{
-            min-width: 335px;
+            width: 50%;
             margin-bottom: 50px;
         }
         .gg-date-tb, .gg-date-tb1, .gg-time-title{
@@ -105,10 +105,20 @@
             background-color: rgba(255, 255, 255, 0.3);
         }
         .gg-time-page{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
             width: 100%;
+            padding: 20px;
             min-width: 335px;
             height: 272px;
             border-radius: 10px;
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+        .gg-map{
+            width: 100%;
+            min-width: 335px;
+            height: 272px;
             background-color: rgba(255, 255, 255, 0.3);
         }
         .gg-circle-white{
@@ -314,6 +324,25 @@
             color:#F4EDED;
             padding: 10px;
         }
+        .gg-time-page div{
+            width:30%;
+            height: 36px;
+            font-weight: 700;
+            font-size: 14px;
+            line-height: 36px;
+            align-items: center;
+            text-align: center;
+            letter-spacing: 2.5px;
+            border: 1px solid #F4EDED;
+            border-radius: 20px;
+            color: #F4EDED;
+
+        }
+        @media screen and (max-width:1315px){
+            .gg-time-page{
+                width: 350px;
+            }
+        }
         @media screen and (max-width: 960px) {
         .left-nav {
             display: none;
@@ -342,9 +371,9 @@
         }
         .gg-send{
             font-size: 20px;
-    line-height: 21px;
-    font-weight: 700;
-    letter-spacing: 2.5px;
+            line-height: 21px;
+            font-weight: 700;
+            letter-spacing: 2.5px;
             }
         .gg-option{
             font-size: 12px;
@@ -465,7 +494,9 @@
                 width: 335px;
                 padding: 20px 12px 0;
             }
-            
+            .gg-time-page{
+                width: 335px;
+            }
     }
     @media screen and (max-width:400px) {
         .gg-mr50{
@@ -477,11 +508,7 @@
             width: 293px;
         }
         }
-        @media screen and (max-width:1240px) {
-            .gg-time{
-                max-width: 335px;
-            }
-        }
+        
     </style>
 </head>
 <body>
@@ -620,7 +647,7 @@
                         </div>
                         <div class="btn-pc-orange gg-date-tb1">確認</div>
                     </div>
-                    <div class="gg-time-page"></div>
+                    <div class="gg-map"></div>
                 </div>
                 <div class="d-flex">
                     <div class="d-flex align-items-center gg-date-tb">
@@ -729,6 +756,11 @@
             const bixheight = $('.gg-date-page').outerHeight();
             $('.gg-time-page').css('height',`${bixheight}px`);
         })
+    </script>
+    <script>
+        for(var i=0; i<15 ; i++){
+            $('.gg-time-page').append(`<div>${i+7}:00</div>`);
+        }
     </script>
 </body>
 </html>
