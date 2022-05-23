@@ -100,7 +100,7 @@
         }
         .gg-date-page{
             width: 100%;
-            height: 272px;
+            height: max-content;
             border-radius: 10px;
             background-color: rgba(255, 255, 255, 0.3);
         }
@@ -461,6 +461,10 @@
                 font-weight: 700;
                 letter-spacing: 2.5px;
             }
+            .calendar{
+                width: 335px;
+                padding: 20px 12px 0;
+            }
             
     }
     @media screen and (max-width:400px) {
@@ -720,5 +724,11 @@
             
 		})
 	</script>
+    <script>
+        $('.arrow').click(function () {
+            const bixheight = $('.gg-date-page').outerHeight();
+            $('.gg-time-page').css('height',`${bixheight}px`);
+        })
+    </script>
 </body>
 </html>
