@@ -713,9 +713,11 @@
 			console.log('day',this);
 			if($(this).hasClass('checked')||($(this).parent().hasClass('other'))){
 				$(this).removeClass('checked');
-			}else
+			}else{
 				$(this).addClass('checked');
-				$(this).parent().siblings().children().removeClass('checked');
+                $(this).parent().parent().siblings().children().children().removeClass('checked');
+            }
+            
 		})
 	</script>
 </body>
