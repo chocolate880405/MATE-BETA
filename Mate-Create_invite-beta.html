@@ -338,6 +338,10 @@
             color: #F4EDED;
 
         }
+        .gg-time-page div.active{
+            background: linear-gradient(45deg, #F66F40, #FFD38D);
+            color: #240173;
+        }
         @media screen and (max-width:1315px){
             .gg-time-page{
                 width: 350px;
@@ -761,6 +765,17 @@
         for(var i=0; i<15 ; i++){
             $('.gg-time-page').append(`<div>${i+7}:00</div>`);
         }
+    </script>
+    <script>
+        $('.gg-time-page div').click(function(){
+            if($(this).hasClass('active')){
+                $(this).removeClass('active');
+            }else{
+                $(this).addClass('active');
+                $(this).siblings().removeClass('active');
+            }
+            
+        })
     </script>
 </body>
 </html>
