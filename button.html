@@ -15,6 +15,11 @@
 </head>
 <body>
     <div class="apple"></div>
+    <div class="apple"></div>
+    <div class="apple"></div>
+    <div class="apple"></div>
+    <div class="apple"></div>
+    <div class="apple"></div>
 </body>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
     integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
@@ -23,21 +28,28 @@
     var click1=0;
     $('.apple').click(function(){
         
-        click1=click1+1;
-        console.log(click1);
+        click1++;
         if(click1>2){
             click1=0;
         }
-        
-        if(click1==0){
-        $('.apple').css('background-color','white');
-        }else if(click1==1){
-        $('.apple').css('background-color','orange');
-        }else if(click1==2){
-        $('.apple').css('background-color','blue');
-        }
+        console.log(click1);
 
-    })
+        if(click1==0){
+            $(this).css('background-color','white');
+            
+        }else if(click1==1){
+            $(this).css('background-color','orange');
+            
+        }else if(click1==2){
+            $(this).css('background-color','blue');
+            
+        }
+        
+        
+})
+
+        
+
     
 </script>
 </html>
