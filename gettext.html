@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>text demo</title>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+</head>
+<body>
+    <p id="test">這是段落中的<b>粗體</b>文本。</p>
+    <input id="Text1" type="text" /><br />
+    <select id="Select1">
+        <option value="值一">選項一</option>
+        <option value="值二">選項二</option>
+        <option value="值三">選項三</option>
+    </select><br />
+    <button id="btn1">顯示</button>
+
+    <script>
+        $("#btn1").click(function () {
+            alert("Val: " + $("#test").val());
+            alert("Text: " + $("#test").text());
+            alert("HTML: " + $("#test").html());
+            alert("下拉選單的文字: " + $("#Select1").find(":selected").text());
+            alert("下拉選單的值: " + $("#Select1").find(":selected").val());
+        });
+    </script>
+</body>
+</html>
