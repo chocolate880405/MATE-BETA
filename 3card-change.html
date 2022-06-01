@@ -1,0 +1,2052 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<style>
+    /* * {
+        outline: 1px solid red;
+    } */
+
+    body {
+        /* background-color: #240173; */
+        /* height: 100vh; */
+        background-color: rgb(163, 163, 163);
+        min-width: 375px;
+    }
+
+    div,
+    p {
+        margin-bottom: 0px;
+    }
+
+    .page {
+        width: 100%;
+        height: 100%;
+    }
+
+
+    .left-nav {
+        width: 316px;
+        background-color: rgb(119, 196, 255);
+        /* height: 100vh; */
+    }
+
+    .kk-click-left:hover {
+        /* cursor: url('imgs/mouseenter-02.png'), auto; */
+    }
+
+    .right-content {
+        /* background-color: rgb(183, 115, 246); */
+        position: relative;
+        overflow: hidden;
+    }
+
+    .kk-click-left {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        height: 66%;
+        width: 15%;
+        color: grey;
+        z-index: 999;
+        cursor: url('imgs/mouseenter-03.png'), auto;
+    }
+
+    .kk-click-right {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        height: 66%;
+        width: 15%;
+        color: grey;
+        z-index: 999;
+        /* cursor: url('imgs/mouseenter-04.png'), auto; */
+    }
+
+    .kk-click-left:hover {
+        /* cursor: url('imgs/clickicon-01.png'), auto; */
+
+    }
+
+    .content {
+        width: 80%;
+        max-width: 904px;
+        margin-top: 110px;
+        position: relative;
+        /*待討論*/
+        /* background-color: #240173; */
+
+    }
+
+    .title {
+        margin-bottom: 50px;
+    }
+
+    /* ----------------------right-icon---------------------------- */
+
+    .kk-righticon {
+        /* position: fixed;
+        right:110px;
+        top:107px; */
+        width: 147px;
+        margin-top: 107px;
+    }
+
+    .kk-icon_1 {
+        width: 20px;
+        vertical-align: middle;
+        margin-top: 4px;
+        margin-right: 1px;
+    }
+
+    .kk-icon_2 {
+        width: 20px;
+        vertical-align: middle;
+        margin-top: 7px;
+        margin-right: 1px;
+    }
+
+    .kk-icon1 {
+        width: 37px;
+        height: 37px;
+        margin-bottom: 30px;
+    }
+
+    .kk-icon2 {
+        width: 37px;
+        height: 37px;
+        margin-bottom: 30px;
+    }
+
+
+    @media screen and (max-width: 960px) {
+
+
+        .kk-first-pic {
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+
+
+        .kk-message-line-top {
+            display: none;
+        }
+
+        .kk-p-details {
+            width: 100%;
+            display: block;
+            justify-content: center;
+
+        }
+
+        .kk-pc-block {
+            width: 90%;
+            margin: auto;
+        }
+
+        .kk-90 {
+            width: 90%;
+            margin: auto;
+        }
+
+
+        .kk-pc-match-btn {
+            /* height: 1000px;
+            z-index: 5; */
+            bottom: -116px;
+        }
+
+
+        .kk-pccontent-details,
+        .kk-pccontent-details {
+            display: none;
+        }
+
+        .left-nav {
+            display: none;
+        }
+
+        .kk-righticon {
+            width: 153px;
+            display: flex;
+            position: absolute;
+            top: 0px;
+            right: 5%;
+            margin-top: 97px;
+            justify-content: space-between;
+
+        }
+
+        .kk-icon1 {
+            margin-right: 20px;
+        }
+
+        .content {
+            width: 90%;
+            min-width: 335px;
+            margin-top: 0px;
+        }
+
+        .kk-click-left,
+        .kk-click-right {
+            width: 10%;
+        }
+
+        /* .right-content {
+            overflow:scroll;
+    } */
+    }
+
+
+
+    /* ---------------------message---------------------------- */
+
+    .kk-message-2 {
+        margin-top: 16px;
+    }
+
+    .kk-message-pic {
+        width: 28px;
+        margin: 0px 16px;
+    }
+
+    .kk-message {
+        width: 100%;
+    }
+
+    .kk-message-word {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        letter-spacing: 2.5px;
+        color: #F4EDED;
+        margin-top: 6px;
+    }
+
+    .kk-message-go {
+        color: #9F9F9F;
+    }
+
+    .kk-message-line-top {
+        border: 1px solid #F4EDED;
+        border-left: none;
+        border-right: none;
+        border-top: none;
+        margin-bottom: 20px;
+    }
+
+    .kk-message-line {
+        border: 1px solid #F4EDED;
+        border-left: none;
+        border-right: none;
+        border-top: none;
+        margin-top: 20px;
+    }
+
+
+    /* ---------------------card---------------------------- */
+
+    .kk-wrap-allcard {
+        position: absolute;
+        margin: auto;
+        width: 100%;
+        height: 552px;
+        margin-top: 42px;
+        margin-bottom: 120px;
+    }
+
+    .kk-container {
+        width: 100%;
+        height: 552px;
+        border-radius: 10px;
+        background: linear-gradient(148.71deg, rgba(177, 177, 177, 0.24) -4.59%, rgba(44, 44, 44, 0) 84.27%), linear-gradient(148.71deg, rgba(177, 177, 177, 0.24) -4.59%, rgba(44, 44, 44, 0) 84.27%) !important;
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 30px;
+    }
+
+    .kk-p-card-word {
+        position: absolute;
+        bottom: 45px;
+        left: 20px;
+        /* z-index: 1; */
+        display: none;
+    }
+
+
+
+
+    .kk-bg-color {
+        width: 100%;
+        height: 552px;
+        background: rgba(44, 44, 44, 0.4);
+        position: absolute;
+        top: 0;
+        left: 0;
+        border-radius: 10px;
+    }
+
+    .kk-bg-line {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 552px;
+        border: solid 1px transparent;
+        border-radius: 20px;
+        background-image: linear-gradient(#09005F, #09005F),
+            linear-gradient(135deg, hsla(0, 0%, 100%, 0.283), #ffffff00);
+        background-origin: border-box;
+        background-clip: content-box, border-box;
+        border-radius: 10px;
+    }
+
+    .kk-card-pic {
+        width: 40%;
+        height: 100%;
+        /* overflow: hidden; */
+        background-image: url(imgs/user-pic.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: absolute;
+        left: 0;
+        top: 0;
+        border-radius: 10px 0px 0px 10px;
+        /* z-index: 2; */
+    }
+
+    .kk-right-match {
+        position: absolute;
+        width: 129px;
+        height: 32px;
+        right: -4px;
+        top: 43px;
+
+        background: linear-gradient(235.63deg, #FF67F9 -27.29%, #5C3BF6 119.87%);
+        /* z-index: 30; */
+    }
+
+    .kk-heart {
+        width: 12%;
+        margin: 0 10px;
+    }
+
+    .kk-heart img {
+        width: 100%;
+    }
+
+    .kk-heart-word {
+        color: #F4EDED;
+        margin-top: 6px;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 15px;
+        /* identical to box height, or 94% */
+        text-align: center;
+
+        /* text */
+        color: #F4EDED;
+    }
+
+    .kk-phone-title {
+        color: #F4EDED;
+        letter-spacing: 2.5px;
+        margin-right: 10px;
+    }
+
+    .kk-p-online {
+        width: 10px;
+        height: 10px;
+        background: #00CF2E;
+        border-radius: 50%;
+    }
+
+    .kk-p-line2 {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding: 3px 13px 5px;
+        gap: 10px;
+
+
+        width: 96px;
+        height: 25px;
+
+        background: linear-gradient(226.02deg, #FF67F9 4.21%, #5338F5 99.47%);
+        border-radius: 21px;
+    }
+
+    .kk-p-line2 h6 {
+        font-style: normal;
+        font-weight: 700;
+        font-size: 12px;
+
+        display: flex;
+        align-items: center;
+        text-align: center;
+        letter-spacing: 2.5px;
+        color: #F4EDED;
+        flex: none;
+        order: 0;
+        flex-grow: 0;
+        margin-top: 8px;
+    }
+
+    .kk-p-line3 {
+        margin-top: 10px;
+    }
+
+    .kk-p-match-btn {
+        position: absolute;
+        bottom: -10px;
+        left: 0;
+        right: 0;
+        display: flex;
+        justify-content: center;
+        /* z-index: 4; */
+        display: none;
+
+    }
+
+    .kk-pc-match-btn {
+        position: absolute;
+        bottom: -10px;
+        left: 0;
+        right: 0;
+        display: flex;
+        justify-content: center;
+        /* z-index: 5; */
+
+    }
+
+    .kk-p-match-btn1 {
+        margin-right: 20px;
+
+    }
+
+    .kk-p-keyword {
+        width: max-content;
+        height: 22px;
+        padding: 6px 8px 6px 10px;
+        border-radius: 20px;
+        border: 1px solid #F4EDED;
+        color: #F4EDED;
+        font-weight: 700;
+        font-size: 12px;
+        line-height: 8px;
+        letter-spacing: 2.5px;
+        margin-right: 8px;
+    }
+
+    .kk-desktop-card-word {
+        /* display: none; */
+        width: 60%;
+        margin-left: 45%;
+        /* z-index: 6; */
+        display: block;
+        flex-wrap: wrap;
+    }
+
+    .kk-desktop-line1 {
+        margin-top: 42px;
+    }
+
+    .kk-desktop-title {
+        margin-right: 15px;
+    }
+
+    .btn-tag-1 {
+        display: inline-block;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 12px;
+        color: #F4EDED;
+        letter-spacing: 2.5px;
+        border: 1px solid #F4EDED;
+        padding: 5px 10px 6px 10px;
+        border-radius: 20px;
+        margin-right: 15px;
+        /* min-width: 50px; */
+
+    }
+
+    .mt-44 {
+        margin-top: 44px;
+    }
+
+    .kk-pc-underline {
+        border: 1px solid #F4EDED;
+        border-left: none;
+        border-right: none;
+        border-top: none;
+        width: 70%;
+    }
+
+    .kk-p-underline {
+        border: 1px solid #F4EDED;
+        border-left: none;
+        border-right: none;
+        border-top: none;
+        width: 100%;
+        margin-top: 5px;
+    }
+
+    .kk-pc-small-title {
+        font-size: 16px;
+        line-height: 30px;
+        letter-spacing: 2.5px;
+        font-weight: 700;
+    }
+
+    .mt-30 {
+        margin-top: 20px;
+    }
+
+    .kk-content-all {
+        height: 552px;
+    }
+
+    .kk-p-hint {
+        width: 18px;
+        height: 18px;
+        margin-right: 10px;
+    }
+
+    .kk-p-hint img {
+        width: 100%;
+    }
+
+    .kk-hint-all {
+        margin-top: 10px;
+        position: absolute;
+        top: 120px;
+        right: 0;
+    }
+
+    .kk-p-details-all {
+        width: 100%;
+        height: 552px;
+        /* z-index: 7; */
+        position: relative;
+        overflow: hidden;
+        border-radius: 10px;
+    }
+
+    .kk-github {
+        width: 18px;
+        height: 18px;
+        margin-top: 6px;
+        margin-left: 10px;
+    }
+
+    .kk-p-likecard {
+        background-color: #ffffff53;
+        width: 100%;
+        height: 70px;
+        border-radius: 10px;
+        padding: 8px 15px 15px 15px;
+        margin-top: 10px;
+    }
+
+    .kk-p-like {
+        text-align: right;
+    }
+
+    .kk-p-titleword {
+        position: relative;
+    }
+
+    .kk-p-btn-all {
+        position: absolute;
+        right: 0;
+        margin-top: 5px;
+    }
+
+    .kk-p-btn {
+        width: 25px;
+        height: 25px;
+        cursor: pointer;
+
+    }
+
+
+
+
+
+    .kk-p-btn img {
+        width: 100%;
+    }
+
+    /* .kk-p-userpic{
+            border-radius: 10px;
+            width: 100%;
+            overflow: hidden;
+            margin-top: 20px;
+        
+        }  */
+
+    /* .kk-p-userpic{
+            width: 100%;
+        } */
+
+    .calendar_container {
+        /* border: 1px solid rgb(195, 15, 15); */
+        width: 51px;
+        height: 61px;
+        border-radius: 10px;
+        margin-right: 30px;
+    }
+
+    .week {
+        background-color: #FF7676;
+        width: 51px;
+        height: 22px;
+        border-radius: 10px 10px 0px 0px;
+    }
+
+    .week p {
+        color: #000000;
+        font-family: Noto Looped Thai;
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 15px;
+        letter-spacing: 2.5px;
+        text-align: center;
+        padding-top: 7%;
+
+
+    }
+
+    .date {
+        background-color: #f9f5f5;
+        /* position: absolute; */
+        width: 51px;
+        height: 39px;
+        border-radius: 0px 0px 10px 10px;
+    }
+
+    .date p {
+        font-family: Noto Looped Thai;
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 15px;
+        letter-spacing: 2.5px;
+        text-align: center;
+        color: #000000;
+        padding-top: 20%;
+
+    }
+
+    .kk-try-pic {
+        background-image: url(imgs/shinder0125.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 100%;
+        height: 552px;
+        overflow: hidden;
+        border-radius: 10px;
+
+    }
+
+    .kk-try-pic2 {
+        background-image: url(imgs/michael-burry.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 100%;
+        height: 552px;
+        overflow: hidden;
+        border-radius: 10px;
+
+    }
+
+    .kk-try-pic3 {
+        /* background-image: url(imgs/user-pic.png); */
+        background-image: url(https://preview.redd.it/8rq2umri7cm51.jpg?auto=webp&s=c3f17b1f9d4a2988a6ad7f7409760d77b85d2667);
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 492px;
+        height: 552px;
+        overflow: hidden;
+        border-radius: 10px;
+        background-position: center center;
+    }
+
+
+    .kk-something-wrong {
+        width: 20px;
+        margin-right: 10px;
+
+    }
+
+    .kk-something-wrong img {
+        width: 100%;
+    }
+
+    .kk-p-wrong {
+        font-weight: 700;
+        font-size: 12px;
+        line-height: 15px;
+        text-align: center;
+        color: #9E9D9D;
+        letter-spacing: 2.5px;
+        margin-top: 8px;
+    }
+
+    .kk-something-wrong-all {
+        margin-top: 80px;
+    }
+
+    .kk-phone-section1 {
+        display: none;
+    }
+
+    .kk-pc-section2 {
+        display: flex;
+    }
+
+    .kk-section2-right {
+        width: 70%;
+        margin-right: 40px;
+        margin-top: 20px;
+        padding-left: 60px;
+    }
+
+    .kk-pc-section3 {
+        display: flex;
+    }
+
+    .kk-section3-right {
+        width: 80%;
+        margin-left: 40px;
+        margin-top: 40px;
+        order: 1;
+        padding-right: 60px;
+    }
+
+    .kk-btn-pc-purple {
+        width: max-content;
+        padding: 4px 15px;
+        border-radius: 8px;
+        height: 41px;
+        color: #F4EDED;
+        background: linear-gradient(226.02deg, #FF67F9 4.21%, #5338F5 99.47%);
+        font-size: 16px;
+        line-height: 16px;
+        letter-spacing: 2.5px;
+        font-weight: 700;
+        cursor: pointer;
+    }
+
+    .kk-heart-btn {
+        width: 20px;
+        margin: 0 10px;
+        margin-top: 5px;
+
+    }
+
+    .kk-heart-btn2 {
+        width: 29px;
+        margin: 0 10px;
+        margin-top: 3px;
+
+    }
+
+    .kk-heart-btn2 img {
+        width: 100%;
+    }
+
+    .kk-heart img {
+        width: 100%;
+
+    }
+
+    .kk-p-details {
+        height: 300%;
+        transition: .5s;
+    }
+
+    .kk-pagedown-area {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 80px;
+        height: 30%;
+        cursor: url('imgs/mouseenter-02.png'), auto;
+        /* z-index: 90; */
+    }
+
+    .kk-pageup-area {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 30%;
+        cursor: pointer;
+        /* z-index: 91; */
+        cursor: url('imgs/mouseenter-01.png'), auto;
+    }
+
+    .kk-desktop-section1 {
+        display: flex;
+        flex-direction: row-reverse;
+    }
+
+    .kk-slider-dots {
+        position: absolute;
+        bottom: 25px;
+        right: 51px;
+
+    }
+
+    .kk-slider-dots li {
+        width: 5px;
+        height: 30px;
+        margin-bottom: 14px;
+        background: #C4C4C4;
+    }
+
+    .kk-slider-dots li:nth-child(1) {
+        background: #D35CF9;
+    }
+
+    .iconchange1 {
+        background-image: url(imgs/iconchange-02.svg);
+        position: relative;
+    }
+
+    .iconchange2 {
+        background-image: url(imgs/iconchange-01.svg);
+    }
+
+    .iconchange3 {
+        background-image: url(imgs/iconchange-03.svg);
+    }
+
+    .iconchange1.active {
+        background-image: url(imgs/iconchange-05.svg);
+    }
+
+    .iconchange2.active {
+        background-image: url(imgs/iconchange-04.svg);
+    }
+
+    .iconchange3:hover {
+        background-image: url(imgs/iconchange-06.svg);
+    }
+
+    .kk-find-btn {
+        width: 100px;
+        height: 25px;
+        border: 1px solid #F4EDED;
+        border-radius: 20px;
+    }
+
+    /* select選擇器不用➕點 (這是主欄位) (pc-hint)*/
+    select {
+        width: 100%;
+        height: 20px;
+        padding: 0px 12px 2px 12px;
+        color: #F4EDED;
+        background: transparent;
+        border: transparent;
+        border-radius: 20px;
+        font-size: 14px;
+        line-height: 25px;
+        letter-spacing: 2.5px;
+        font-weight: 700;
+    }
+
+    /* 下拉式選單裡的option*/
+    select option {
+        background: #664D9D;
+        color: #F4EDED;
+        outline: none;
+        border: none;
+        /* z-index: -2; */
+        font-size: 14px;
+        letter-spacing: 2.5px;
+        font-weight: 700;
+    }
+
+    .kk-find-line {
+        width: 1px;
+        height: 63px;
+        background-color: #969696;
+        /* transform: rotate(90deg); */
+        margin: 0 21px;
+    }
+
+    .kk-find-block {
+        display: none;
+        /* height: 82px; */
+    }
+
+    .btn-phone-sign-white:hover {
+        background: #AFAFAF;
+    }
+
+    .btn-phone-sign-white {
+        width: max-content;
+        padding: 5px 30px;
+        border-radius: 20px;
+        height: 30px;
+        color: #240173;
+        background: #F4EDED;
+        font-size: 16px;
+        line-height: 16px;
+        font-weight: 700;
+        letter-spacing: 2.5px;
+    }
+
+    .kk-like-all {
+        width: 300px;
+        height: 240px;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .kk-like-ultrain {
+        width: 400%;
+        transition: .5s;
+    }
+
+    .kk-like-part1 {
+        width: 100%;
+    }
+
+    .kk-p-card-word {
+        display: none;
+    }
+
+
+    .gg-cardsection {
+        overflow: hidden;
+        height: 640px;
+    }
+
+    /* <!-- __________________從這裡開始複製_______________ --> */
+
+    .kk-purple-btn2 {
+        width: max-content;
+        padding: 4px 15px;
+        border-radius: 8px;
+        height: 41px;
+        color: #F4EDED;
+        background: linear-gradient(226.02deg, #FF67F9 4.21%, #5338F5 99.47%);
+        cursor: pointer;
+        position: relative;
+        margin-right: 40px;
+
+    }
+
+    .like-btn {
+        display: inline-block;
+        Cursor: pointer;
+        width: 80px;
+        height: 80px;
+        position: absolute;
+        top: -20px;
+        left: -10px;
+        background: url('https://i.ibb.co/vw78mf3/heart.png') no-repeat 0% 50%;
+        background-size: 2900%;
+    }
+
+
+
+    .kk-heart-btn {
+        width: 22px;
+        margin-left: 4px;
+        margin-top: 1px;
+        position: absolute;
+
+
+    }
+
+    .kk-heart-btn img {
+        width: 100%;
+
+    }
+
+    .kk-like-word {
+        margin-left: 40px;
+    }
+
+
+    .like-active {
+        animation-name: animate2;
+        animation-duration: .8s;
+        animation-iteration-count: 1;
+        animation-fill-mode: forwards;
+    }
+
+    .like-active {
+        animation-timing-function: steps(28);
+    }
+
+    @keyframes animate2 {
+        0% {
+            background-position: left;
+        }
+
+        50% {
+            background-position: right;
+        }
+
+        100% {
+            background-position: right;
+        }
+    }
+
+    /* <!-- ______________到這ㄦ_____________ --> */
+
+    .kk-hover {
+        margin-top: 6px;
+    }
+
+    .kk-hover a:hover {
+        color: #F4EDED;
+        text-decoration: none;
+        outline: none;
+        cursor: pointer;
+
+    }
+
+    .redcoin {
+        width: 20px;
+        height: 20px;
+        background: linear-gradient(226.02deg, #FFDA93 4.21%, #F56638 99.47%);
+        border-radius: 50%;
+        position: absolute;
+        top: -5px;
+        left: 28px;
+        z-index: 99;
+        text-align: center;
+        color: #240173;
+        font-weight: 700;
+    }
+
+
+
+
+
+
+
+
+
+    @media screen and (max-width: 960px) {
+        .kk-p-match-btn1 {
+            margin-right: 0px;
+        }
+
+        .kk-like-word {
+            margin-left: 0px;
+        }
+
+        .kk-heart-btn {
+            display: none;
+        }
+
+        .kk-slider-dots {
+            /* right: 10px; */
+            display: none;
+        }
+
+        .kk-try-pic3 {
+            width: 100%;
+            height: 552px;
+            overflow: hidden;
+            border-radius: 10px;
+
+        }
+
+        .kk-phone-section1 {
+            display: block;
+            justify-content: center;
+            margin: auto;
+        }
+
+        .kk-desktop-section1 {
+            display: none;
+        }
+
+        /* .kk-p-details-all {
+            width: 337px;
+            padding: 0 20px;
+        } */
+
+        .kk-heart-btn,
+        .kk-heart-btn2,
+        .like-btn {
+            display: none;
+        }
+
+        .kk-pccontent-details,
+        .kk-pccontent-details1 {
+            display: none;
+        }
+
+        .kk-wrap-allcard {
+            width: 100%;
+            margin-top: 42px;
+            height: 450px;
+        }
+
+        .kk-container {
+            width: 100%;
+            height: 680px;
+
+        }
+
+        a:hover {
+            color: #F4EDED;
+            text-decoration: none;
+            outline: none;
+            cursor: pointer;
+
+        }
+
+
+        .kk-bg-line {
+            width: 100%;
+            height: 552px;
+        }
+
+        .kk-bg-color {
+            width: 100%;
+            height: 552px;
+        }
+
+        .kk-card-pic {
+            width: 90%;
+            border-radius: 10px;
+        }
+
+        .kk-message-al {
+            margin-top: 60px;
+        }
+
+        .kk-right-match {
+            width: 129px;
+            height: 32px;
+        }
+
+        .kk-heart-word {
+            font-size: 12px;
+            line-height: 15px;
+            font-weight: 700;
+            letter-spacing: 2.5px;
+            margin-top: 7px;
+
+        }
+
+        .kk-p-card-word {
+            display: block;
+        }
+
+        .kk-desktop-card-word,
+        .kk-pagedown-area,
+        .kk-pageup-area {
+            display: none;
+        }
+
+
+
+        .kk-hint-all {
+            top: 158px;
+        }
+
+        .kk-wrap-allcard {
+            /* width: 90%; */
+            height: 552px;
+        }
+
+        .kk-content-all {
+            height: 450px;
+        }
+
+        /* .kk-phone-section1 {
+            display: block;
+        } */
+
+        .kk-pc-section2 {
+            flex-direction: column;
+        }
+
+        .kk-try-pic {
+            /* height: 500px; */
+            width: 100%;
+            margin-top: 40px;
+            border-radius: 10px;
+        }
+
+        .kk-section2-right {
+            margin-right: 0px;
+            margin-top: 0px;
+            width: 100%;
+            padding-left: 0px;
+
+        }
+
+        .kk-try-pic2 {
+            /* height: 297px; */
+            margin-top: 220px;
+            border-radius: 10px;
+        }
+
+
+        .kk-pc-section3 {
+            flex-direction: column;
+        }
+
+        .kk-section3-right {
+            padding-right: 0px;
+            margin-top: 90px;
+            width: 100%;
+            margin-left: 0px;
+            order: -1;
+        }
+
+        .kk-pc-section3 {
+            position: relative;
+            padding-bottom: 40px;
+        }
+
+        .kk-something-wrong-all {
+            position: absolute;
+            bottom: 0px;
+
+        }
+
+        .kk-yeah {
+            display: none;
+        }
+
+        .kk-ppagedown-area {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 30%;
+            cursor: url('imgs/mouseenter-02.png'), auto;
+            /* z-index: 90; */
+        }
+
+        .kk-ppageup-area {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 30%;
+            cursor: pointer;
+            /* z-index: 91; */
+            cursor: url('imgs/mouseenter-01.png'), auto;
+        }
+
+        .gg-cardmb {
+            margin-bottom: 240px;
+        }
+
+        .gg-cardmb1 {
+            margin-bottom: 120px;
+        }
+
+        .gg-cardsection {
+            height: 700px;
+        }
+
+    }
+
+
+    @media screen and (max-width: 424px) {
+        .kk-hint-all {
+            position: absolute;
+            top: 196px;
+        }
+    }
+</style>
+</head>
+<body>
+<div class="page d-flex ">
+    <div class="gg-blur"></div>
+    <div class="LB-lightbox" id="btn1">
+        <div class="LB-lightbox1">
+            <div class="LB-close_btn"></div>
+            <div class="LB-section d-flex justify-content-between flex-column">
+                <div class="LB-title d-flex pc-title-32 justify-content-center LB-ttitle">
+                    <div class="LB-left text-linear-orange mr-2">&lt;</div>
+                    <p class="text-pink">Error </p>
+                    <div class="LB-right text-linear-orange ml-2">&gt;</div>
+                </div>
+                <div class="LB-content align-items-center d-flex flex-column pc-small-title-16 LB-text">
+                    <p class="text-pink ">你的自我介紹空空如也</p>
+                    <p class="text-pink ">現在就前往填寫，增加約會成功的機率!</p>
+                </div>
+                <div class="d-flex justify-content-center">
+                    <div class="btn-pc-orange LB-btn" style="cursor: pointer;" onclick="window.location='Member_personal-data-3.php';">前往填寫</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="left-nav"></div>
+
+    <div class="right-content flex-grow-1 d-flex justify-content-center">
+        <div class="kk-click-left"></div>
+        <div class="kk-click-right"></div>
+        <div class="content">
+            <!-- __________________________desktop_________________________ -->
+            <div class="kk-message-al">
+
+
+                <div class="kk-message-block">
+                    <div class="kk-message-line-top"></div>
+                    <div class="kk-message-1 d-flex">
+
+                        <div class="kk-message-pic">
+
+                            <svg class="kk-message" data-name="message" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 34.39 26.28">
+                                <defs>
+                                    <style>
+                                        .cls-1 {
+                                            fill: #f4eded;
+                                        }
+                                    </style>
+                                </defs>
+                                <path class="cls-1" d="M17.28.28H31a2.94,2.94,0,0,1,2.55,1.3,3.33,3.33,0,0,1,.58,2q0,9.54,0,19.08a3.11,3.11,0,0,1-2.22,3.16,2.69,2.69,0,0,1-.85.12H3.53a3,3,0,0,1-3-2.41,3.51,3.51,0,0,1-.11-.92v-19A3.09,3.09,0,0,1,3.63.28ZM3.86,2.43,4,2.64c3.69,4,7.37,8,11.08,11.92a3.16,3.16,0,0,0,1.13.8,2.7,2.7,0,0,0,3.21-.8L30.5,2.65c.06-.06.1-.13.18-.22ZM30.51,23.75l-8.36-9.23a2.31,2.31,0,0,1-.21.37c-.49.53-1,1.1-1.49,1.57a4.52,4.52,0,0,1-5.23.78,6.23,6.23,0,0,1-2-1.65l-.91-1L4,23.75ZM2.49,4,2.44,4V22.26l8.32-9.19ZM32.11,22.25V3.93l-8.32,9.14Z" />
+                            </svg>
+                        </div>
+                        <h6 class="kk-message-word">你收到了<?= $obj["message"]["invitation"] ?>封邀請卡! <span class="kk-message-go">現在就前往回覆邀請</span> </h6>
+
+                    </div>
+
+                    <div class="kk-message-2 d-flex">
+
+                        <div class="kk-message-pic">
+                            <svg id="kk-message" data-name="message" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.44 18.21">
+                                <defs>
+                                    <style>
+                                        .cls-1 {
+                                            fill: #f4eded;
+                                        }
+                                    </style>
+                                </defs>
+                                <path class="cls-1" d="M7.08,9.58A3.36,3.36,0,1,0,3.73,6.22,3.35,3.35,0,0,0,7.08,9.58Zm1.33,1.25H5.75a4.53,4.53,0,0,0-4.53,4.54.91.91,0,0,0,.91.91H12a.9.9,0,0,0,.9-.91A4.53,4.53,0,0,0,8.41,10.83Zm5.35.42H11.83a5.31,5.31,0,0,1,1.95,4.12,1.78,1.78,0,0,1-.26.91h3.61a.85.85,0,0,0,.84-.87A4.18,4.18,0,0,0,13.76,11.25ZM12.53,9.58A2.94,2.94,0,1,0,10.78,4.3a4.18,4.18,0,0,1,.49,1.92,4.11,4.11,0,0,1-.83,2.48A2.92,2.92,0,0,0,12.53,9.58Z" />
+                            </svg>
+                        </div>
+                        <h6 class="kk-message-word">你收到了<?= $obj["message"]["meetup"] ?>個聚會通知! <span class="kk-message-go">現在就前往查看</span> </h6>
+                    </div>
+                </div>
+
+                <div class="kk-find-block">
+                    <div class="kk-message-al">
+
+                        <div class="kk-find-all ">
+                            <h4 class="pc-middle-title-20 mr-5">交友篩選</h4>
+                            <div class="kk-find-in d-flex">
+                                <div class="kk-find1">
+                                    <h4 class="pc-small-title-16 mr-3">時間</h4>
+                                    <div class="kk-find-block d-flex">
+                                        <div class="kk-find-btn mr-3">
+                                            <div class="ab-adropdown">
+                                                <select>
+                                                    <option>4/14 </option>
+                                                    <option>4/15</option>
+                                                    <option>4/16</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="kk-find-btn">
+                                            <div class="ab-adropdown">
+                                                <select>
+                                                    <option>7:00 </option>
+                                                    <option>8:00</option>
+                                                    <option>9:00</option>
+                                                    <option>10:00 </option>
+                                                    <option>11:00</option>
+                                                    <option>12:00</option>
+                                                    <option>13:00 </option>
+                                                    <option>14:00</option>
+                                                    <option>15:00</option>
+                                                    <option>16:00 </option>
+                                                    <option>17:00</option>
+                                                    <option>18:00</option>
+                                                    <option>19:00</option>
+                                                    <option>20:00</option>
+                                                    <option>21:00 </option>
+                                                    <option>22:00</option>
+                                                    <option>23:00 </option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                                <div class="kk-find-line"></div>
+
+                                <div class="kk-find2">
+                                    <h4 class="pc-small-title-16 mr-3">地點</h4>
+
+                                    <div class="kk-find d-flex ">
+
+                                        <div class="kk-find-btn ">
+                                            <div class="ab-adropdown">
+                                                <select>
+                                                    <option>台北</option>
+                                                    <option>桃園</option>
+                                                    <option>新竹</option>
+                                                    <option>苗栗</option>
+                                                    <option>台中</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="kk-find-line"></div>
+
+                                <div class="kk-find3">
+                                    <h4 class="pc-small-title-16 mr-3">找什麼樣的對象?</h4>
+                                    <div class="kk-find-btn mr-3">
+                                        <div class="ab-adropdown">
+                                            <select>
+                                                <option>美食</option>
+                                                <option>旅遊</option>
+                                                <option>打籃球</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="btn-phone-sign-white" style="margin-left:120px; margin-top:30px">尋找</div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="kk-message-line mt-3"></div>
+
+            </div>
+            <div class="kk-hint-all d-flex">
+
+                <div class="kk-p-hint">
+                    <img src="imgs/hint-01.png" alt="">
+                </div>
+                <div class="kk-p-hint">
+                    <img src="imgs/hint-02.png" alt="">
+                </div>
+                <div class="kk-p-hint">
+                    <img src="imgs/hint-03.png" alt="">
+                </div>
+                <div class="kk-p-hint">
+                    <img src="imgs/hint-04.png" alt="">
+                </div>
+                <div class="kk-p-hint">
+                    <img src="imgs/hint-05.png" alt="">
+                </div>
+            </div>
+            <div class="gg-cardsection">
+                <div class="kk-wrap-allcard" id="card1">
+
+                    <!-- __________________________ -->
+
+                    <!-- ___________content_______________ -->
+
+
+                    <div class="kk-pccontent-details  d-flex">
+                        <!-- ___________bg_______________ -->
+                        <div class="kk-bg-all">
+                            <div class="kk-bg-color"></div>
+                            <div class="kk-bg-line"> </div>
+                            <div class="kk-container "></div>
+                        </div>
+                        <div class="kk-p-details-all">
+                            <ul class="kk-p-details list-unstyled">
+                                <li class="section kk-pc-section1">
+                                    <div class="kk-desktop-section1 ">
+                                        <div class="kk-section2-right">
+                                            <div class="kk-desktop-line1 d-flex">
+                                                <h3 class="kk-desktop-title pc-title-32"><?= $obj[0]["name"] ?></h3>
+                                                <div class="kk-p-online"></div>
+                                            </div>
+                                            <div class="kk-p-line3 d-flex">
+                                                <div class="btn-tag-1 "><?= $obj["list"][0]['personality']['hobby'][0] ?></div>
+                                                <div class="btn-tag-1 "><?= $obj["list"][0]['personality']['hobby'][1] ?></div>
+                                                <div class="btn-tag-1 "><?= $obj["list"][0]['personality']['hobby'][2] ?></div>
+                                                <div class="btn-tag-1 "><?= $obj["list"][0]['personality']['hobby'][3] ?></div>
+                                                <div class="btn-tag-1 "><?= $obj["list"][0]['personality']['hobby'][4] ?></div>
+                                            </div>
+                                            <div class="kk-desk-details">
+                                                <div class="kk-pc-block">
+                                                    <h6 class="kk-pc-small-title mt-44">年齡</h6>
+                                                    <h6 class="kk-pc-small-title"><?= $obj["list"][0]["age"] ?>歲</h6>
+                                                    <div class="kk-pc-underline"></div>
+                                                </div>
+                                                <div class="kk-pc-block mt-30">
+                                                    <h6 class="kk-pc-small-title ">職業</h6>
+                                                    <div class="d-flex">
+                                                        <h6 class="kk-pc-small-title "><?= $obj["list"][0]["occupation"] ?></h6>
+                                                        <img src="imgs/github-01.png" alt="" class="kk-github">
+                                                    </div>
+                                                    <div class="kk-pc-underline"></div>
+                                                </div>
+                                                <div class="kk-pc-block mt-30">
+                                                    <h6 class="kk-pc-small-title">居住地</h6>
+                                                    <h6 class="kk-pc-small-title "><?= $obj["list"][0]["location"] ?></h6>
+                                                    <div class="kk-pc-underline"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="kk-first-pic"></div>
+                                        <div class="kk-try-pic3"><img src="<?= $obj["list"][0]['picture'][2] ?>" alt=""></div>
+                                    </div>
+
+
+
+                                    <div class="kk-phone-section1">
+                                        <div class="kk-first-pic kk-ppage0  gg-cardmb1">
+                                            <div class="kk-try-pic3"><img src="<?= $obj["list"][0]['picture'][2] ?>" alt=""></div>
+                                            <div class="kk-p-card-word">
+                                                <div class="kk-p-line1 d-flex">
+                                                    <h3 class="kk-phone-title">John</h3>
+                                                    <div class="kk-p-online"></div>
+                                                </div>
+                                                <div class="kk-p-line2">
+                                                    <h6>前端工程師</h6>
+                                                </div>
+                                                <div class="kk-p-line3 d-flex">
+                                                    <div class="kk-p-keyword">美食</div>
+                                                    <div class="kk-p-keyword">游泳</div>
+                                                    <div class="kk-p-keyword">滑雪</div>
+                                                    <div class="kk-p-keyword">跳舞</div>
+                                                    <div class="kk-p-keyword">煮飯</div>
+                                                </div>
+
+
+                                            </div>
+                                        </div>
+
+                                        <div class="kk-pc-block kk-ppage1">
+                                            <h6 class="kk-pc-small-title mt-44">年齡</h6>
+                                            <h6 class="kk-pc-small-title">23歲</h6>
+                                            <div class="kk-p-underline"></div>
+                                        </div>
+                                        <div class="kk-pc-block mt-30">
+                                            <h6 class="kk-pc-small-title ">職業</h6>
+                                            <div class="kk-career-github d-flex">
+                                                <h6 class="kk-pc-small-title">前端工程師</h6>
+                                                <img src="imgs/github-01.png" alt="" class="kk-github">
+                                            </div>
+
+                                            <div class="kk-p-underline"></div>
+                                        </div>
+                                        <div class="kk-pc-block mt-30 gg-cardmb">
+                                            <h6 class="kk-pc-small-title">居住地</h6>
+                                            <h6 class="kk-pc-small-title">台北市</h6>
+                                            <div class="kk-p-underline"></div>
+                                        </div>
+                                    </div>
+
+
+                                </li>
+                                <li class="section kk-pc-section2">
+                                    <div class="kk-section2-right kk-ppage2">
+                                        <div class="kk-pc-block mt-30">
+                                            <h6 class="kk-pc-small-title">自我介紹</h6>
+                                            <h6 class="kk-pc-small-title"><?= $obj["list"][0]["introduce"] ?></h6>
+                                            <div class="kk-p-underline"></div>
+                                        </div>
+
+                                        <div class="kk-pc-block mt-30 gg-cardmb1">
+                                            <div class="kk-p-titleword d-flex">
+                                                <h6 class="kk-pc-small-title">興趣喜好</h6>
+                                                <div class="kk-p-btn-all d-flex">
+                                                    <div class="kk-like-btn-pre kk-p-btn mr-3">
+                                                        <img src="imgs/change-btn-01.png" alt="" style="margin-right: 20px;">
+                                                    </div>
+                                                    <div class="kk-like-btn-next kk-p-btn">
+                                                        <img src="imgs/change-btn-02.png" alt="">
+                                                    </div>
+
+                                                </div>
+
+                                            </div>
+
+                                            <div class="kk-like-all">
+                                                <ul class="kk-like-ultrain list-unstyled d-flex">
+                                                    <li class="kk-like-part1">
+                                                        <div class="kk-p-likecard">
+                                                            <h6 class="phone-text-14">貓貓或狗狗？</h6>
+                                                            <h5 class="kk-p-like phone-middle-title-20"><?= $obj["list"][0]["personality"]['dogCat'] ?></h5>
+                                                        </div>
+                                                        <div class="kk-p-likecard">
+                                                            <h6 class="phone-text-14">貓貓或狗狗？</h6>
+                                                            <h5 class="kk-p-like phone-middle-title-20"><?= $obj["list"][0]["personality"]['dogCat'] ?></h5>
+                                                        </div>
+                                                        <div class="kk-p-likecard">
+                                                            <h6 class="phone-text-14">貓貓或狗狗？</h6>
+                                                            <h5 class="kk-p-like phone-middle-title-20">貓貓</h5>
+                                                        </div>
+                                                    </li>
+
+                                                    <li class="kk-like-part1">
+                                                        <div class="kk-p-likecard">
+                                                            <h6 class="phone-text-14">貓貓或狗狗？</h6>
+                                                            <h5 class="kk-p-like phone-middle-title-20"><?= $obj["list"][0]["personality"]['dogCat'] ?></h5>
+                                                        </div>
+                                                        <div class="kk-p-likecard">
+                                                            <h6 class="phone-text-14">貓貓或狗狗？</h6>
+                                                            <h5 class="kk-p-like phone-middle-title-20"><?= $obj["list"][0]["personality"]['dogCat'] ?></h5>
+                                                        </div>
+                                                        <div class="kk-p-likecard">
+                                                            <h6 class="phone-text-14">貓貓或狗狗？</h6>
+                                                            <h5 class="kk-p-like phone-middle-title-20"><?= $obj["list"][0]["personality"]['dogCat'] ?></h5>
+                                                        </div>
+                                                    </li>
+
+                                                    <li class="kk-like-part1">
+                                                        <div class="kk-p-likecard">
+                                                            <h6 class="phone-text-14">期待長期或短期交往?</h6>
+                                                            <h5 class="kk-p-like phone-middle-title-20"><?= $obj["list"][0]["personality"]['longShort'] ?></h5>
+                                                        </div>
+                                                        <div class="kk-p-likecard">
+                                                            <h6 class="phone-text-14">期待長期或短期交往?</h6>
+                                                            <h5 class="kk-p-like phone-middle-title-20"><?= $obj["list"][0]["personality"]['longShort'] ?></h5>
+                                                        </div>
+                                                        <div class="kk-p-likecard">
+                                                            <h6 class="phone-text-14">期待長期或短期交往?</h6>
+                                                            <h5 class="kk-p-like phone-middle-title-20"><?= $obj["list"][0]["personality"]['longShort'] ?></h5>
+                                                        </div>
+                                                    </li>
+
+                                                    <li class="kk-like-part1">
+                                                        <div class="kk-p-likecard">
+                                                            <h6 class="phone-text-14">吃飯喜好?</h6>
+                                                            <h5 class="kk-p-like phone-middle-title-20"><?= $obj["list"][0]['meals'][0] ?></h5>
+                                                        </div>
+                                                        <div class="kk-p-likecard">
+                                                            <h6 class="phone-text-14">吃飯喜好?</h6>
+                                                            <h5 class="kk-p-like phone-middle-title-20"><?= $obj["list"][0]['meals'][1] ?></h5>
+                                                        </div>
+
+                                                    </li>
+                                                </ul>
+
+
+                                            </div>
+
+
+
+                                        </div>
+
+
+                                    </div>
+
+                                    <div class="kk-try-pic kk-ppage3"><img src="<?= $obj["list"][0]['picture'][0] ?>" alt=""></div>
+
+                                </li>
+                                <li class="section kk-pc-section3 kk-ppage4">
+                                    <div class="kk-section3-right">
+                                        <div class="kk-p-time-all kk-90">
+                                            <h6 class="kk-pc-small-title " style="margin-top: 20px;">約會時段</h6>
+                                            <div class="kk-p-c-all d-flex mt-30 ">
+                                                <div class="kk-p-calender">
+                                                    <div class="calendar_container">
+                                                        <div class="week">
+                                                            <p>週六</p>
+                                                        </div>
+
+                                                        <div class="date">
+                                                            <p>10</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="kk-p-calenderword">
+                                                    <h6 class="kk-pc-small-title">4/21週日</h6>
+                                                    <div class="kk-p-calenderkeyword d-flex">
+                                                        <div class="kk-p-keyword ">14:00</div>
+                                                        <div class="kk-p-keyword ">20:00</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="kk-p-underline " style="margin-top: 20px;"></div>
+                                        </div>
+
+
+                                        <div class="kk-p-time-all  kk-90">
+                                            <div class="kk-p-c-all d-flex mt-30">
+                                                <div class="kk-p-calender">
+                                                    <div class="calendar_container">
+                                                        <div class="week">
+                                                            <p>週六</p>
+                                                        </div>
+
+                                                        <div class="date">
+                                                            <p>10</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="kk-p-calenderword">
+                                                    <h6 class="kk-pc-small-title">4/21週日</h6>
+                                                    <div class="kk-p-calenderkeyword d-flex">
+                                                        <div class="kk-p-keyword ">14:00</div>
+                                                        <div class="kk-p-keyword ">20:00</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="kk-p-underline" style="margin-top: 20px;"></div>
+                                        </div>
+
+                                        <div class="kk-p-eatwhat mt-30 kk-90">
+                                            <h6 class="kk-pc-small-title">吃飯的喜好</h6>
+                                            <div class="kk-p-calenderkeyword d-flex">
+                                                <div class="kk-p-keyword "><?= $obj["list"][0]['personality']['meals'][0] ?></div>
+                                                <div class="kk-p-keyword "><?= $obj["list"][0]['personality']['meals'][1] ?></div>
+                                                <div class="kk-p-keyword "><?= $obj["list"][0]['personality']['meals'][2] ?></div>
+                                            </div>
+                                        </div>
+
+                                        <div class="kk-something-wrong-all d-flex kk-90">
+                                            <div class="kk-something-wrong">
+                                                <img src="imgs/something-wrong-01.png" alt="">
+                                            </div>
+                                            <div class="kk-p-wrong ">違規檢舉</div>
+
+                                        </div>
+                                    </div>
+
+
+
+                                    <div class="kk-try-pic2 kk-ppage5"><img src="<?= $obj["list"][0]['picture'][1] ?>" alt=""></div>
+
+
+
+                                </li>
+                            </ul>
+                            <ul class="kk-slider-dots list-unstyled">
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                            </ul>
+
+                            <div class="kk-pageup-area"></div>
+                            <div class="kk-pagedown-area"></div>
+                            <div class="kk-ppageup-area"></div>
+                            <div class="kk-ppagedown-area"></div>
+
+                        </div>
+                    </div>
+                    <!-- ___________top_______________ -->
+                    <div class="kk-rightmatch-top">
+                        <div class="kk-right-match d-flex">
+                            <div class="kk-heart">
+                                <img src="imgs/iconright-03.svg" alt="">
+                            </div>
+
+                            <h6 class="kk-heart-word">契合度 <?= $obj["list"][0]["match"] ?>%</h6>
+                        </div>
+
+
+
+                        <div class="kk-pc-match-btn d-flex kk-yeah ">
+
+                            <!-- _________________愛心動態_______________ -->
+                            <div class="kk-purple-btn2">
+                                <div class="kk-heart-btn">
+                                    <img src="imgs/heart-behind-01.png" alt="">
+                                </div>
+                                <span class="like-btn"></span>
+                                <h6 class="pc-middle-title-20 kk-like-word">關注</h6>
+                            </div>
+                            <!-- ____________________________ -->
+
+                            <div class="kk-btn-pc-purple kk-p-match-btn1 d-flex " id="btn2-btn">
+                                <div class="kk-heart-btn2">
+                                    <img src="imgs/emailicon-01.png" alt="">
+                                </div>
+                                <h6 class="pc-middle-title-20 kk-hover"><a href="Mate_Create_invite.php">寄送邀請卡</a></h6>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <!-- _________________________________ -->
+
+
+
+                </div>
+
+
+
+            </div>
+
+
+        </div>
+    </div>
+    <div class="kk-righticon">
+        <div class="kk-icon1 iconchange1 active">
+            <div class="redcoin">1</div>
+        </div>
+
+        <div class="kk-icon1 iconchange2"></div>
+
+        <div class="kk-icon2 iconchange3"></div>
+    </div>
+
+</div>
+</body>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+<script>
+    //  <!-- __________________最後是這！_______________ --> 
+    $('.like-btn').on('click', function() {
+        $(this).toggleClass('like-active');
+    });
+    // <!-- __________________結束這局_______________ --> 
+    //第一個鈕 改鈕的id和lightbox的id
+    $('#btn1-btn').click(function() {
+        console.log(this, '1');
+        $('#btn1').addClass('active');
+        $('.gg-blur').css('display', 'block');
+    })
+
+    //第一個鈕 改鈕的id和lightbox的id
+    $('#btn2-btn').click(function() {
+        console.log(this, '1');
+        $('#btn1').addClass('active');
+        $('.gg-blur').css('display', 'block');
+    })
+
+    // 關掉lightbox
+    $('.LB-close_btn').click(function() {
+        // closelightbox();
+        $('.gg-blur').css('display', 'none');
+        $('.LB-lightbox').removeClass('active');
+    })
+</script>
+
+<script>
+    // card移動換頁
+    function remove(e) {
+        $(e).css('transition', '1.5s').css('transform', `translate(${-1000}px,${800}px)`);
+    }
+
+    function recycle(e) {
+        $(e).css('z-index', '1').css('opacity', '0');
+    }
+
+    function nowtop(e) {
+        $(e).css('z-index', '9').css('transition', '0s').css('transition-delay', '.4s')
+    };
+
+    function uptop(e) {
+        $(e).css('z-index', '8').css('transform', `translate(${0}px)`).css('opacity', '1').css('transition', '0s').css('transition-delay', '.4s')
+    };
+    var stair = 0;
+    var page = 0;
+    var ppage = 0;
+    var like = 0
+    var firstpage = '#card1';
+    var secondpage = '#card2';
+    var thirdpage = '#card3';
+    var temporary;
+    //每張卡片z-index
+    $(firstpage).css('z-index', '9');
+    $(secondpage).css('z-index', '8');
+    $(thirdpage).css('z-index', '1');
+
+    $('.kk-click-left').click(function() {
+        if (stair <= 1) {
+            remove(firstpage);
+            recycle(firstpage);
+            nowtop(secondpage);
+            uptop(thirdpage);
+            stair++;
+        } else if (stair == 2) {
+            remove(firstpage);
+            recycle(firstpage);
+            nowtop(secondpage);
+            uptop(thirdpage);
+            stair = 0;
+        }
+        console.log(stair);
+        // 替換卡片後回到第一張
+        ppage = 0;
+        page = 0;
+        like = 0;
+        pageUpdate();
+        $('.kk-p-details').css('transition', '.5s').css('transform', `translateY(${0}px`);
+        $('.kk-like-ultrain').css('transition', 'none').css('transform', `translateX(${0}px`);
+        $('.like-btn').removeClass('like-active');
+
+        // 儲存firstpage的值
+        temporary = firstpage;
+        firstpage = secondpage;
+        secondpage = thirdpage;
+        // thirdpage=新的id
+        thirdpage = temporary;
+    })
+
+    // 點選時往上下scroll和scrollbar點
+    $('.kk-slider-dots li').mouseenter(function() {
+        page = $(this).index();
+        pageUpdate();
+    })
+
+    function pageUpdate() {
+        $(firstpage).find('.kk-slider-dots li').eq(page).css('background', '#D35CF9').siblings().css('background', '#C4C4C4')
+        $(firstpage).find('.kk-p-details').css('transition', '.5s').css('transform', `translateY(${page * 552 * -1 }px`)
+    }
+
+    function pageUpdateWithoutTransition() {
+        $('.kk-slider-dots li').eq(page).css('background', '#D35CF9').siblings().css('background', '#C4C4C4')
+        $('.kk-p-details').css('transition', 'none').css('transform', `translateY(${page * 552 * -1}px`)
+    }
+
+    $('.kk-pagedown-area').click(function() {
+        if (page >= 2) {
+            page = 2;
+            pageUpdateWithoutTransition();
+        } else {
+            page++;
+            pageUpdate();
+            console.log('down', page);
+        }
+    });
+
+    $('.kk-pageup-area').click(function() {
+        if (page < 1) {
+            page = 0;
+            pageUpdateWithoutTransition();
+        } else {
+            page--;
+            pageUpdate();
+            console.log('up', page);
+        }
+    });
+
+    //手機版輪播
+    $('.kk-ppagedown-area').click(function() {
+        const ppage0 = $('.kk-ppage0').offset().top;
+        const ppage1 = $('.kk-ppage1').offset().top;
+        const ppage2 = $('.kk-ppage2').offset().top;
+        const ppage3 = $('.kk-ppage3').offset().top;
+        const ppage4 = $('.kk-ppage4').offset().top;
+        const ppage5 = $('.kk-ppage5').offset().top;
+
+        if (ppage == 0) {
+            $('.kk-p-details').css('transition', '.5s').css('transform', `translateY(${(ppage1-ppage0-120)*-1}px`);
+            ppage++;
+        } else if (ppage == 1) {
+            $('.kk-p-details').css('transition', '.5s').css('transform', `translateY(${(ppage2-ppage0-20)*-1}px`);
+            ppage++;
+        } else if (ppage == 2) {
+            $('.kk-p-details').css('transition', '.5s').css('transform', `translateY(${(ppage3-ppage0)*-1}px`);
+            ppage++;
+        } else if (ppage == 3) {
+            $('.kk-p-details').css('transition', '.5s').css('transform', `translateY(${(ppage4-ppage0)*-1}px`);
+            ppage++;
+        } else if (ppage == 4) {
+            $('.kk-p-details').css('transition', '.5s').css('transform', `translateY(${(ppage5-ppage0)*-1}px`);
+            page++;
+        } else {
+            ppage = 4;
+        }
+        console.log('down', ppage);
+    })
+    $('.kk-ppageup-area').click(function() {
+        const ppage0 = $('.kk-ppage0').offset().top;
+        const ppage1 = $('.kk-ppage1').offset().top;
+        const ppage2 = $('.kk-ppage2').offset().top;
+        const ppage3 = $('.kk-ppage3').offset().top;
+        const ppage4 = $('.kk-ppage4').offset().top;
+        const ppage5 = $('.kk-ppage5').offset().top;
+
+        if (ppage == 4) {
+            $('.kk-p-details').css('transition', '.5s').css('transform', `translateY(${(ppage4-ppage0)*-1}px`);
+            ppage--;
+        } else if (ppage == 3) {
+            $('.kk-p-details').css('transition', '.5s').css('transform', `translateY(${(ppage3-ppage0)*-1}px`);
+            ppage--;
+        } else if (ppage == 2) {
+            $('.kk-p-details').css('transition', '.5s').css('transform', `translateY(${(ppage2-ppage0-20)*-1}px`);
+            ppage--;
+        } else if (ppage == 1) {
+            $('.kk-p-details').css('transition', '.5s').css('transform', `translateY(${(ppage1-ppage0-120)*-1}px`);
+            ppage--;
+        } else if (ppage == 0) {
+            $('.kk-p-details').css('transition', '.5s').css('transform', `translateY(${0}px`);
+        } else {
+            ppage = 0;
+        }
+        console.log('up', ppage);
+    });
+    // card中的興趣喜好輪播
+
+
+    $('.kk-like-btn-next').click(function() {
+        if (like >= 3) {
+            like = 3;
+            $('.kk-like-ultrain').css('transition', 'none').css('transform', `translateX(${like * 300 * -1 }px`);
+        } else {
+            like++;
+            $('.kk-like-ultrain').css('transition', '.5s').css('transform', `translateX(${like * 300 * -1 }px`);
+            console.log('right', like);
+        }
+    })
+
+    $('.kk-like-btn-pre').click(function() {
+        if (like <= 0) {
+            like = 0;
+            $('.kk-like-ultrain').css('transition', 'none').css('transform', `translateX(${like * 300 * -1 }px`);
+        } else {
+            like--;
+            $('.kk-like-ultrain').css('transition', '.5s').css('transform', `translateX(${like * 300 * -1 }px`);
+            console.log('left', like);
+        }
+    })
+</script>
+<script>
+    // ＿＿＿＿＿＿＿＿＿＿＿＿＿按右邊按紐＿＿＿＿＿＿＿＿
+
+    $('.iconchange2').click(function() {
+        $('.kk-message-block').css('display', 'none');
+        $('.kk-find-block').css('display', 'block');
+        $('.iconchange2').toggleClass('active');
+        if ($('.iconchange2').hasClass('active')) {
+            $('.iconchange1').removeClass('active');
+        }
+
+    })
+
+    $('.iconchange1').click(function() {
+        $('.kk-message-block').css('display', 'block');
+        $('.kk-find-block').css('display', 'none');
+        $('.iconchange1').toggleClass('active');
+        if ($('.iconchange1').hasClass('active')) {
+            $('.iconchange2').removeClass('active');
+        }
+
+    })
+</script>
+
+</html>
